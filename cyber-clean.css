@@ -1,0 +1,209 @@
+/* Cyber Clean Light Theme
+   Objectif : theme clair + geek lisible, sans fond sombre. */
+
+:root {
+    --bg: #f5faff;
+    --bg2: #edf6ff;
+    --surface: #ffffff;
+    --surface-soft: #f3f9ff;
+    --text: #1c2d3f;
+    --muted: #4e647c;
+    --border: #cfe4fb;
+    --border-strong: #9cc8f1;
+    --accent: #2f89ff;
+    --accent-strong: #175bc8;
+    --accent-soft: #18d0ff;
+    --shadow: 0 10px 30px rgba(23, 91, 200, 0.12);
+    --radius: 14px;
+    --font-body: "Segoe UI", Tahoma, Arial, sans-serif;
+    --font-code: "Consolas", "Courier New", monospace;
+}
+
+html {
+    color-scheme: light;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 5% 5%, rgba(24, 208, 255, 0.14), transparent 32%),
+        radial-gradient(circle at 85% 2%, rgba(47, 137, 255, 0.12), transparent 36%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.75;
+}
+
+/* Trame geek légère */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        linear-gradient(to right, rgba(47, 137, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(24, 208, 255, 0.05) 1px, transparent 1px);
+    background-size: 36px 36px;
+}
+
+a {
+    color: var(--accent-strong);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+:focus-visible {
+    outline: 2px solid rgba(47, 137, 255, 0.55);
+    outline-offset: 2px;
+}
+
+header,
+footer {
+    background: linear-gradient(120deg, #ffffff 0%, #eef7ff 100%) !important;
+    border-top: 1px solid var(--border) !important;
+    border-bottom: 1px solid var(--border) !important;
+}
+
+nav {
+    backdrop-filter: blur(4px);
+}
+
+.hero,
+.projects,
+.skills,
+.contact,
+.bio,
+.blog,
+.cv,
+.cv-section,
+.cv-preview,
+.cv-block,
+.bts-projets-section,
+.skills-grid,
+.blog-grid,
+.bts-projet-card,
+.skill-category,
+.project-card,
+.blog-card,
+.stat-item,
+.competence-category,
+.veille-content,
+.veille-intro,
+.veille-themes,
+.veille-outils,
+.veille-articles,
+.veille-theme-card,
+.veille-outil-card,
+.veille-article-card,
+.article-container,
+.project-container,
+.slides-container,
+.slide,
+.document-card,
+.project-hero,
+.cv-container,
+#cv-complet.cv-section,
+#a-propos.cv-section,
+#contact-form,
+.container {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+    box-shadow: var(--shadow) !important;
+    color: var(--text) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.logo,
+.title {
+    font-family: var(--font-code);
+    color: #14365f !important;
+}
+
+.nav-links a,
+footer p {
+    color: #1c3f68 !important;
+}
+
+.nav-links a:hover {
+    color: var(--accent) !important;
+}
+
+button,
+input[type="submit"],
+.download-btn,
+.print-btn,
+#contact-form button,
+.article-link,
+.bts-projet-card a,
+.back-btn,
+.nav-btn,
+.filter-btn,
+.menu-toggle {
+    border-radius: 10px !important;
+}
+
+#contact-form input,
+#contact-form textarea,
+input,
+textarea {
+    background: var(--surface-soft) !important;
+    border: 1px solid var(--border-strong) !important;
+    color: var(--text) !important;
+}
+
+#contact-form input::placeholder,
+#contact-form textarea::placeholder {
+    color: #6b7f95;
+}
+
+#contact-form button,
+.download-btn,
+.article-link,
+.bts-projet-card a,
+.back-btn,
+.nav-btn {
+    background: linear-gradient(120deg, var(--accent) 0%, var(--accent-soft) 100%) !important;
+    border: 1px solid #5bb8ff !important;
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+#contact-form button:hover,
+.download-btn:hover,
+.article-link:hover,
+.bts-projet-card a:hover,
+.back-btn:hover,
+.nav-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.03);
+}
+
+img {
+    filter: saturate(1.05) contrast(1.03);
+}
+
+[style*="background: #f8f9fa"],
+[style*="background-color: #f8f9fa"],
+[style*="background: #fff"],
+[style*="background-color: #fff"],
+[style*="background-color: #ffffff"] {
+    background: var(--surface-soft) !important;
+    border: 1px solid var(--border) !important;
+}
+
+[style*="color: #333"],
+[style*="color:#333"],
+[style*="color: #444"],
+[style*="color:#444"],
+[style*="color: #34495e"],
+[style*="color:#34495e"],
+[style*="color: #2c3e50"],
+[style*="color:#2c3e50"] {
+    color: var(--text) !important;
+}
+

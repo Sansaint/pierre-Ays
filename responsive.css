@@ -1,0 +1,278 @@
+/* Variables pour les breakpoints */
+:root {
+    --mobile: 480px;
+    --tablet: 768px;
+    --laptop: 1024px;
+    --desktop: 1200px;
+}
+
+/* Styles de base pour mobile */
+@media (max-width: 480px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 4rem 1rem 2rem;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    /* Projets */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+
+    /* Compétences */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    /* Blog */
+    .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .blog-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* CV */
+    .cv-container {
+        padding: 1rem;
+    }
+
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Formulaire de contact */
+    #contact-form {
+        padding: 1rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Styles pour tablette */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Styles pour laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Styles pour desktop */
+@media (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Styles communs pour tous les appareils */
+@media (max-width: 768px) {
+    /* Amélioration de la lisibilité */
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Espacement adaptatif */
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    /* Boutons et interactions */
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* Images responsives */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Grilles flexibles */
+    .grid {
+        display: grid;
+        gap: 1rem;
+    }
+
+    /* Formulaires */
+    input, textarea {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Animations adaptées */
+    .animate {
+        animation: none;
+        transition: transform 0.3s ease;
+    }
+
+    /* Optimisation des performances */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Support tactile */
+    .touch-target {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Optimisations pour les appareils haute résolution */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* Support de l'orientation paysage sur mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 2rem 1rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nav-links {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+/* Theme override: noir et blanc style geek/hacker */
+body {
+    background: #050505;
+    color: #e6e6e6;
+    font-family: "Consolas", "Courier New", monospace;
+}
+
+.nav-links {
+    background: #111111;
+    border-top: 1px solid #2e2e2e;
+}
+
+.nav-links a,
+.menu-toggle {
+    color: #f5f5f5;
+}

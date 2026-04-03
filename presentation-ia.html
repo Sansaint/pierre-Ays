@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation IA 2024</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="cyber-clean.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --text-color: #34495e;
+            --title-color: #2c3e50;
+            --background-color: #f0f0f0;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-color);
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(52, 152, 219, 0.2);
+            z-index: 1000;
+        }
+
+        .progress {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .slides-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: none;
+            padding: 40px;
+            box-sizing: border-box;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateX(100%);
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .slide-number {
+            font-size: 24px;
+            color: var(--primary-color);
+            margin-right: 20px;
+            font-weight: bold;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .slide-title {
+            color: var(--title-color);
+            font-size: 2em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .slide-content {
+            display: flex;
+            height: calc(100% - 100px);
+            gap: 30px;
+        }
+
+        .slide-text {
+            flex: 1;
+            padding-right: 40px;
+            overflow-y: auto;
+            line-height: 1.6;
+        }
+
+        .slide-image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .slide-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-image:hover {
+            transform: scale(1.05);
+        }
+
+        .slide-text ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .slide-text li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-text li:hover {
+            transform: translateX(10px);
+        }
+
+        .slide-text li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            border-radius: 0 0 15px 15px;
+        }
+
+        .nav-btn {
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+        }
+
+        .nav-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+
+        .slide-counter {
+            color: var(--text-color);
+            font-size: 0.9em;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .fullscreen-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+        }
+
+        .keyboard-shortcuts {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            color: var(--text-color);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .shortcut {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .shortcut-key {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress"></div>
+    </div>
+
+    <div class="presentation-container">
+        <div class="slides-container">
+            <div class="slide active">
+                <div class="slide-header">
+                    <div class="slide-number">1</div>
+                    <h2 class="slide-title">Introduction</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h3>Bienvenue dans ma présentation</h3>
+                        <p>Je vais vous présenter mes projets et réalisations en tant qu'étudiant en informatique.</p>
+                        <ul>
+                            <li>Projets de développement</li>
+                            <li>Compétences techniques</li>
+                            <li>Expériences professionnelles</li>
+                        </ul>
+                    </div>
+                    <div class="slide-image-container">
+                        <img src="images/profile.jpg" alt="Photo de profil" class="slide-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-number">2</div>
+                    <h2 class="slide-title">Projets</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h3>Mes Projets Principaux</h3>
+                        <ul>
+                            <li>ChatSocial - Application de messagerie</li>
+                            <li>E-enseignement - Plateforme d'apprentissage</li>
+                            <li>Bataille Navale en C</li>
+                            <li>Boutique en ligne Shopify</li>
+                        </ul>
+                    </div>
+                    <div class="slide-image-container">
+                        <img src="images/projects.jpg" alt="Projets" class="slide-image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="slide-header">
+                    <div class="slide-number">3</div>
+                    <h2 class="slide-title">Compétences</h2>
+                </div>
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h3>Mes Compétences Techniques</h3>
+                        <ul>
+                            <li>Développement Web (HTML, CSS, JavaScript)</li>
+                            <li>Programmation (C, PHP, Python)</li>
+                            <li>Bases de données</li>
+                            <li>Design UI/UX</li>
+                        </ul>
+                    </div>
+                    <div class="slide-image-container">
+                        <img src="images/skills.jpg" alt="Compétences" class="slide-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn">
+                <i class="fas fa-arrow-left"></i>
+                Précédent
+            </button>
+            <div class="slide-counter">Slide <span id="currentSlide">1</span> sur <span id="totalSlides">3</span></div>
+            <button class="nav-btn" id="nextBtn">
+                Suivant
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <button class="fullscreen-btn" id="fullscreenBtn">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <div class="keyboard-shortcuts">
+        <div class="shortcut">
+            <span class="shortcut-key">←</span>
+            <span>Précédent</span>
+        </div>
+        <div class="shortcut">
+            <span class="shortcut-key">→</span>
+            <span>Suivant</span>
+        </div>
+        <div class="shortcut">
+            <span class="shortcut-key">F</span>
+            <span>Plein écran</span>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const currentSlideSpan = document.getElementById('currentSlide');
+        const totalSlidesSpan = document.getElementById('totalSlides');
+        const progress = document.querySelector('.progress');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        let currentSlide = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+
+            currentSlideSpan.textContent = currentSlide + 1;
+            progress.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+
+            prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+            nextBtn.style.opacity = currentSlide === slides.length - 1 ? '0.5' : '1';
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i>';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i>';
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+        totalSlidesSpan.textContent = slides.length;
+        updateSlides();
+    </script>
+</body>
+</html> 
