@@ -1,13 +1,13 @@
 :root {
-    --bg-main: #060b08;
-    --bg-surface: #0d1511;
-    --bg-soft: #12201a;
-    --text-main: #e9fff4;
-    --text-muted: #8be7c0;
-    --border-soft: #1f3a2d;
-    --accent-hacker: #00a86b;
-    --accent-hacker-strong: #0b7a52;
-    --accent-hacker-soft: #8be7c0;
+    --bg-main: #f9fafb;
+    --bg-surface: #ffffff;
+    --bg-soft: #f3f4f6;
+    --text-main: #111827;
+    --text-muted: #6b7280;
+    --border-soft: #e5e7eb;
+    --accent-hacker: #6366f1;
+    --accent-hacker-strong: #4f46e5;
+    --accent-hacker-soft: #10b981;
 }
 
 body {
@@ -19,10 +19,10 @@ body {
 }
 
 header {
-    background: #3498db;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: #fff;
     padding: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
 }
 nav {
     display: flex;
@@ -54,11 +54,11 @@ nav {
     transition: color 0.2s;
 }
 .nav-links a:hover {
-    color: #eaf6fb;
+    color: #10b981;
 }
 
 .hero {
-    background: linear-gradient(120deg, #3498db 0%, #6dd5fa 100%);
+    background: linear-gradient(120deg, #6366f1 0%, #8b5cf6 50%, #10b981 100%);
     color: #fff;
     padding: 3rem 0 2rem 0;
     text-align: center;
@@ -94,21 +94,21 @@ nav {
     margin: 2.5rem auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(52,152,219,0.07);
+    box-shadow: 0 2px 16px rgba(99, 102, 241, 0.07);
     padding: 2rem 2.5rem;
 }
 .cv-section h2 {
-    color: #3498db;
+    color: #6366f1;
     margin-bottom: 1.2rem;
     font-size: 2rem;
-    border-bottom: 2px solid #eaf6fb;
+    border-bottom: 2px solid #e0e7ff;
     padding-bottom: 0.5rem;
 }
 .cv-block {
     margin-bottom: 1.7rem;
 }
 .cv-block h3 {
-    color: #217dbb;
+    color: #4f46e5;
     margin-bottom: 0.3rem;
     font-size: 1.15rem;
 }
@@ -126,7 +126,7 @@ nav {
     margin: 2.5rem auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(52,152,219,0.07);
+    box-shadow: 0 2px 16px rgba(99, 102, 241, 0.07);
     padding: 2rem 2.5rem;
 }
 .skills-grid {
@@ -138,7 +138,7 @@ nav {
     flex: 1 1 220px;
 }
 .skill-category h3 {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
@@ -153,7 +153,7 @@ nav {
     margin: 2.5rem auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(52,152,219,0.07);
+    box-shadow: 0 2px 16px rgba(99, 102, 241, 0.07);
     padding: 2rem 2.5rem;
 }
 .interests-grid {
@@ -164,7 +164,7 @@ nav {
     flex: 1 1 220px;
 }
 .interest-category h3 {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
@@ -179,7 +179,7 @@ nav {
     margin: 2.5rem auto;
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(52,152,219,0.07);
+    box-shadow: 0 2px 16px rgba(99, 102, 241, 0.07);
     padding: 2rem 2.5rem;
     text-align: center;
 }
@@ -191,14 +191,14 @@ nav {
 }
 #contact-form input, #contact-form textarea {
     padding: 0.7rem 1rem;
-    border: 1px solid #dbeaf7;
+    border: 1px solid #e0e7ff;
     border-radius: 6px;
     font-size: 1rem;
-    background: #f7f9fb;
+    background: #f5f3ff;
     resize: none;
 }
 #contact-form button {
-    background: #3498db;
+    background: #6366f1;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -209,11 +209,11 @@ nav {
     transition: background 0.2s;
 }
 #contact-form button:hover {
-    background: #217dbb;
+    background: #4f46e5;
 }
 
 footer {
-    background: #3498db;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
     color: #fff;
     text-align: center;
     padding: 1.2rem 0 1rem 0;
@@ -264,12 +264,12 @@ footer {
     max-width: 1100px;
     margin: 3rem auto;
     padding: 2.5rem 1.5rem;
-    background: #fafdff;
+    background: #f5f3ff;
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(52,152,219,0.10);
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
 }
 .bts-projets-section h2 {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 2.2rem;
     margin-bottom: 2.5rem;
     text-align: center;
@@ -284,7 +284,7 @@ footer {
 .bts-projet-card {
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(52,152,219,0.08);
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.08);
     padding: 2rem 1.5rem 1.5rem 1.5rem;
     width: 270px;
     display: flex;
@@ -295,11 +295,11 @@ footer {
 }
 .bts-projet-card:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(52,152,219,0.18);
-    border: 1.5px solid #3498db33;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.18);
+    border: 1.5px solid rgba(99, 102, 241, 0.2);
 }
 .bts-projet-card h3 {
-    color: #3498db;
+    color: #6366f1;
     font-size: 1.25rem;
     margin-bottom: 0.7rem;
     font-weight: 600;
@@ -312,7 +312,7 @@ footer {
 }
 .bts-projet-card a {
     display: inline-block;
-    background: #3498db;
+    background: #6366f1;
     color: #fff;
     padding: 0.5rem 1.2rem;
     border-radius: 6px;
@@ -320,11 +320,11 @@ footer {
     font-weight: 500;
     font-size: 1rem;
     transition: background 0.18s, color 0.18s;
-    box-shadow: 0 1px 4px rgba(52,152,219,0.08);
+    box-shadow: 0 1px 4px rgba(99, 102, 241, 0.08);
 }
 .bts-projet-card a:hover {
-    background: #217dbb;
-    color: #eaf6fb;
+    background: #4f46e5;
+    color: #f5f3ff;
 }
 @media (max-width: 900px) {
     .bts-projets-grid {
@@ -342,13 +342,13 @@ footer {
 #cv-complet.cv-section {
     max-width: 1100px;
     margin: 3rem auto;
-    background: #fafdff;
+    background: #f5f3ff;
     border-radius: 20px;
-    box-shadow: 0 6px 32px rgba(52,152,219,0.10);
+    box-shadow: 0 6px 32px rgba(99, 102, 241, 0.1);
     padding: 2.5rem 2rem 2.5rem 2rem;
 }
 #cv-complet h2 {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 2.3rem;
     margin-bottom: 2.5rem;
     text-align: center;
@@ -365,7 +365,7 @@ footer {
     min-width: 300px;
 }
 .cv-col h3 {
-    color: #3498db;
+    color: #6366f1;
     font-size: 1.3rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -377,18 +377,18 @@ footer {
 .cv-block {
     background: #fff;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(52,152,219,0.07);
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.07);
     padding: 1.1rem 1.2rem 0.7rem 1.2rem;
     margin-bottom: 1.2rem;
-    border-left: 4px solid #3498db33;
+    border-left: 4px solid rgba(99, 102, 241, 0.2);
     transition: box-shadow 0.18s, border-color 0.18s;
 }
 .cv-block:hover {
-    box-shadow: 0 6px 24px rgba(52,152,219,0.16);
-    border-left: 4px solid #3498db;
+    box-shadow: 0 6px 24px rgba(99, 102, 241, 0.16);
+    border-left: 4px solid #6366f1;
 }
 .cv-block strong {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 1.08rem;
 }
 .cv-block em {
@@ -420,16 +420,16 @@ footer {
 
 /* --- À propos de moi --- */
 #a-propos.cv-section {
-    background: #fafdff;
+    background: #f5f3ff;
     border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(52,152,219,0.10);
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.1);
     max-width: 900px;
     margin: 2.5rem auto 0 auto;
     padding: 2.2rem 2rem 2.5rem 2rem;
     text-align: center;
 }
 #a-propos h2 {
-    color: #217dbb;
+    color: #4f46e5;
     font-size: 2rem;
     margin-bottom: 1.2rem;
     font-weight: 700;
@@ -442,20 +442,20 @@ footer {
     flex-wrap: wrap;
 }
 #a-propos .apropos-card {
-    background: linear-gradient(120deg, #eaf6fb 60%, #d0e6f7 100%);
+    background: linear-gradient(120deg, #e0e7ff 60%, #dbeaf7 100%);
     border-radius: 14px;
-    box-shadow: 0 2px 12px #3498db22;
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.15);
     padding: 1.2rem 2.2rem;
     min-width: 170px;
     text-align: center;
     transition: transform 0.18s, box-shadow 0.18s;
     cursor: pointer;
-    border: 1.5px solid #eaf6fb;
+    border: 1.5px solid #e0e7ff;
 }
 #a-propos .apropos-card:hover {
     transform: translateY(-6px) scale(1.04);
-    box-shadow: 0 8px 32px #3498db33;
-    border: 1.5px solid #3498db55;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.2);
+    border: 1.5px solid rgba(99, 102, 241, 0.35);
 }
 #a-propos .apropos-card span {
     display: block;
@@ -463,7 +463,7 @@ footer {
 #a-propos .apropos-card .apropos-number {
     font-size: 2.3rem;
     font-weight: 700;
-    color: #217dbb;
+    color: #4f46e5;
     margin-bottom: 0.2rem;
 }
 #a-propos .apropos-card .apropos-label {
@@ -489,7 +489,7 @@ footer {
 }
 
 .competence-category {
-    background: #f8f9fa;
+    background: #f5f3ff;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -501,7 +501,7 @@ footer {
 }
 
 .competence-category h3 {
-    color: #3498db;
+    color: #6366f1;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -519,7 +519,7 @@ footer {
 
 .competence-category li:before {
     content: "•";
-    color: #3498db;
+    color: #6366f1;
     position: absolute;
     left: 0;
 }
@@ -546,10 +546,10 @@ footer {
 
 .veille-intro {
     margin-bottom: 2.5rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #eaf6fb 100%);
+    background: linear-gradient(135deg, #f5f3ff 0%, #e0e7ff 100%);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(52,152,219,0.1);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -558,7 +558,7 @@ footer {
 }
 
 .veille-intro h3 {
-    color: #3498db;
+    color: #6366f1;
     margin-bottom: 1.2rem;
     font-size: 1.4rem;
     position: relative;
@@ -572,7 +572,7 @@ footer {
     left: 0;
     width: 50px;
     height: 3px;
-    background: #3498db;
+    background: #6366f1;
     border-radius: 2px;
 }
 
@@ -584,7 +584,7 @@ footer {
 }
 
 .veille-intro p:hover {
-    color: #217dbb;
+    color: #4f46e5;
 }
 
 .veille-themes {
@@ -601,7 +601,7 @@ footer {
 }
 
 .veille-themes h3 {
-    color: #217dbb;
+    color: #4f46e5;
     margin-bottom: 1.5rem;
     font-size: 1.3rem;
     position: relative;
@@ -615,7 +615,7 @@ footer {
     left: 0;
     width: 50px;
     height: 3px;
-    background: #217dbb;
+    background: #4f46e5;
     border-radius: 2px;
 }
 
@@ -632,11 +632,11 @@ footer {
 .veille-theme-card:hover {
     transform: translateX(10px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-left: 4px solid #3498db;
+    border-left: 4px solid #6366f1;
 }
 
 .veille-theme-card h4 {
-    color: #3498db;
+    color: #6366f1;
     margin-bottom: 1rem;
     font-size: 1.2rem;
     display: flex;
@@ -681,7 +681,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, #3498db11, transparent);
+    background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -729,7 +729,7 @@ footer {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #3498db, transparent);
+    background: linear-gradient(90deg, #6366f1, transparent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -742,11 +742,11 @@ footer {
 .article-link {
     display: inline-block;
     margin-top: 1.2rem;
-    color: #3498db;
+    color: #6366f1;
     text-decoration: none;
     font-weight: 500;
     padding: 0.7rem 1.2rem;
-    border: 2px solid #3498db;
+    border: 2px solid #6366f1;
     border-radius: 6px;
     transition: all 0.3s ease;
     position: relative;
@@ -760,7 +760,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #3498db;
+    background: #6366f1;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease;

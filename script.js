@@ -1,22 +1,72 @@
-// JS "safe" : s'exécute sur toutes les pages sans casser si certains éléments n'existent pas.
+// JS commun: chaque comportement verifie ses elements avant de s'executer.
 document.addEventListener('DOMContentLoaded', () => {
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
 
     const $ = (sel, root = document) => root.querySelector(sel);
     const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-    // 1) Formulaire de contact
+    const menuToggle = $('.menu-toggle');
+    const navLinks = $('.nav-links');
+
+    if (menuToggle && navLinks) {
+        if (!navLinks.id) navLinks.id = 'navigation-principale';
+        menuToggle.setAttribute('aria-controls', navLinks.id);
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+
+        if (menuToggle.tagName !== 'BUTTON') {
+            menuToggle.setAttribute('role', 'button');
+            menuToggle.setAttribute('tabindex', '0');
+        }
+
+        const closeMenu = () => {
+            navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Ouvrir le menu');
+        };
+
+        const toggleMenu = () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+        menuToggle.addEventListener('keydown', (e) => {
+            if (e.key !== 'Enter' && e.key !== ' ') return;
+            e.preventDefault();
+            toggleMenu();
+        });
+
+        $$('.nav-links a').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!navLinks.classList.contains('active')) return;
+            if (navLinks.contains(e.target) || menuToggle.contains(e.target)) return;
+            closeMenu();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.matchMedia('(min-width: 1051px)').matches) closeMenu();
+        });
+    }
+
     const contactForm = $('#contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Message envoyé avec succès !');
+            alert('Message envoye avec succes !');
             contactForm.reset();
         });
     }
 
-    // 2) Scroll smooth sur ancres internes (uniquement si la cible existe)
-    $$( 'a[href^="#"]' ).forEach((anchor) => {
+    $$('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
             const href = anchor.getAttribute('href');
             const hash = href?.trim();
@@ -30,30 +80,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3) Animation des cartes de projet au scroll
-    const projectCards = $$('.project-card');
-    if (projectCards.length) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
+    $$('.no-doc').forEach((link) => {
+        const originalText = link.textContent.trim();
+
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            link.textContent = 'Document indisponible';
+            link.setAttribute('aria-disabled', 'true');
+
+            window.setTimeout(() => {
+                link.textContent = originalText || 'Document a venir';
+                link.removeAttribute('aria-disabled');
+            }, 1800);
+        });
+    });
+
+    const applyImageFallback = (img) => {
+        if (img.dataset.fallbackApplied === '1') return;
+        img.dataset.fallbackApplied = '1';
+
+        const fallback = document.createElement('div');
+        fallback.className = 'image-fallback';
+        fallback.textContent = img.alt ? `Apercu indisponible : ${img.alt}` : 'Apercu indisponible';
+        img.replaceWith(fallback);
+    };
+
+    $$('img').forEach((img) => {
+        img.addEventListener('error', () => applyImageFallback(img), { once: true });
+        if (img.complete && img.naturalWidth === 0) applyImageFallback(img);
+    });
+
+    const animatedItems = $$(
+        '.project-card, .bts-projet-card, .competence-category, .cv-block, .veille-theme-card, .veille-outil-card, .veille-article-card, .document-card, .feature-card'
+    );
+
+    if (animatedItems.length) {
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            animatedItems.forEach((item) => {
+                item.style.opacity = '1';
+                item.style.transform = 'none';
+            });
+        } else {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (!entry.isIntersecting) return;
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
+                        observer.unobserve(entry.target);
+                    });
+                },
+                { threshold: 0.12 }
+            );
 
-        projectCards.forEach((card) => {
-            card.style.opacity = prefersReducedMotion ? '1' : '0';
-            card.style.transform = prefersReducedMotion ? 'none' : 'translateY(20px)';
-            card.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-            if (!prefersReducedMotion) observer.observe(card);
-        });
+            animatedItems.forEach((item) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(18px)';
+                item.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+                observer.observe(item);
+            });
+        }
     }
 
-    // 4) Gestion de la photo de profil (upload local)
     const profileImage = $('#profile-img');
     const imageOverlay = $('.image-overlay');
     if (profileImage && imageOverlay) {
@@ -69,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const reader = new FileReader();
                 reader.addEventListener('load', () => {
                     profileImage.src = String(reader.result || '');
-                    // Optionnel : envoyer l'image au serveur si tu as un backend.
                 });
                 reader.readAsDataURL(file);
             });
@@ -78,7 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5) Filtrage des articles du blog
     const filterButtons = $$('.filter-btn');
     const blogCards = $$('.blog-card');
     if (filterButtons.length && blogCards.length) {
@@ -88,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.classList.add('active');
 
                 const filterValue = button.getAttribute('data-filter');
-
                 blogCards.forEach((card) => {
                     const cardCategory = card.getAttribute('data-category');
                     const shouldShow = filterValue === 'all' || cardCategory === filterValue;
@@ -98,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6) Animation des statistiques
     const stats = $$('.stat-number');
     if (stats.length) {
         const observerStats = new IntersectionObserver(
@@ -119,63 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         stats.forEach((stat) => observerStats.observe(stat));
     }
-
-    // 7) Theme geek clair: effet typing discret sur titres
-    if (!prefersReducedMotion) {
-        const geekTitles = $$('h1, .logo');
-        geekTitles.forEach((titleEl) => {
-            if (titleEl.dataset.typed === '1') return;
-            const finalText = (titleEl.textContent || '').trim();
-            if (!finalText || finalText.length > 36) return;
-
-            const chars = '01{}[]<>/\\';
-            let frame = 0;
-            const total = finalText.length * 2;
-            titleEl.dataset.typed = '1';
-
-            const timer = setInterval(() => {
-                const reveal = Math.floor(frame / 2);
-                let output = '';
-
-                for (let i = 0; i < finalText.length; i++) {
-                    if (i < reveal || finalText[i] === ' ') {
-                        output += finalText[i];
-                    } else {
-                        output += chars[Math.floor(Math.random() * chars.length)];
-                    }
-                }
-
-                titleEl.textContent = output;
-                frame += 1;
-
-                if (frame > total) {
-                    clearInterval(timer);
-                    titleEl.textContent = finalText;
-                }
-            }, 55);
-        });
-    }
-
-    // 8) Badge "GEEK MODE" dans le coin
-    const geekBadge = document.createElement('div');
-    geekBadge.textContent = 'GEEK MODE';
-    Object.assign(geekBadge.style, {
-        position: 'fixed',
-        right: '14px',
-        bottom: '14px',
-        padding: '7px 11px',
-        borderRadius: '8px',
-        fontFamily: 'Consolas, Courier New, monospace',
-        fontSize: '11px',
-        letterSpacing: '0.8px',
-        color: '#0f4ea8',
-        background: 'rgba(255, 255, 255, 0.88)',
-        border: '1px solid rgba(47, 137, 255, 0.38)',
-        boxShadow: '0 6px 18px rgba(47, 137, 255, 0.18)',
-        zIndex: '15',
-        pointerEvents: 'none'
-    });
-    document.body.appendChild(geekBadge);
 });
 
 function animateValue(obj, start, end, duration, suffix = '') {

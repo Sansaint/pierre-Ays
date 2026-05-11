@@ -1,5 +1,3 @@
-## lien de mon portfolio:
-https://sansaint.github.io/pierre-Ays/
 
 # Portfolio Personnel
 

@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#f5faff">
     <meta name="description" content="Portfolio de Pierre Ayessa - Projets, compétences et expériences">
     <title>Portfolio Pierre Ayessa</title>
-    <link rel="stylesheet" href="bourazza.css">
-    <link rel="stylesheet" href="cyber-clean.css">
+    <link rel="stylesheet" href="bourazza.css?v=20260509">
+    <link rel="stylesheet" href="cyber-clean.css?v=20260509">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">Pierre Ayessa</div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
+            <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation-principale">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navigation-principale">
                 <li><a href="#accueil">Accueil</a></li>
                 <li><a href="#presentation-bts">BTS SIO</a></li>
                 <li><a href="#competences">Compétences</a></li>
@@ -30,7 +32,7 @@
     <section id="accueil" class="hero">
         <div class="profile-container">
             <h1>Pierre Ayessa</h1>
-            <p class="title">Présentation de mon portfolio de Pierre Ayessa</p>
+            <p class="title">Portfolio développeur web et BTS SIO</p>
         </div>
         <div class="hero-content">
             <p>Étudiant motivé et déterminé, je souhaite intégrer une troisième année afin de consolider mes compétences, approfondir mes connaissances et concrétiser mon projet professionnel.</p>
@@ -60,7 +62,7 @@
                 <div class="cv-block">
                     <strong>2023 - 2026 : BTS SIO</strong><br>
                     Iris Ecole supérieur d'informatique (Paris 75)<br>
-                    <em>SLAM (CSS, HTML, Javascript), Cybersécurité, Mathématiques</em>
+                    <em>SLAM (CSS, HTML, JavaScript), cybersécurité, mathématiques</em>
                 </div>
                 <div class="cv-block">
                     <strong>2021 - 2022 : Baccalauréat Littéraire</strong><br>
@@ -89,9 +91,9 @@
                     Paris Event (Paris 75)<br>
                     <ul>
                         <li>Participation à la conception</li>
-                        <li>Développement de sites web vitrines et une partie reseau social</li>
-                        <li>Utilisation HTML, php, CSS, Javascript</li>
-                        <li>Mise en place d'un systeme de billeterie</li>
+                        <li>Développement de sites web vitrines et d'une partie réseau social</li>
+                        <li>Utilisation de HTML, PHP, CSS et JavaScript</li>
+                        <li>Mise en place d'un système de billetterie</li>
                         <li>Optimisation de l'ergonomie</li>
                     </ul>
                 </div>
@@ -101,7 +103,7 @@
                     <ul>
                         <li>Participation à la conception</li>
                         <li>Développement de site web pour l'événement</li>
-                        <li>Utilisation HTML, CSS, Javascript</li>
+                        <li>Utilisation de HTML, CSS et JavaScript</li>
                         <li>Optimisation de l'ergonomie</li>
                         <li>Création de contenu</li>
                     </ul>
@@ -112,13 +114,13 @@
                     <ul>
                         <li>Participation à la conception</li>
                         <li>Développement de sites web vitrines</li>
-                        <li>Utilisation HTML, CSS, Javascript, CMS</li>
+                        <li>Utilisation de HTML, CSS, JavaScript et CMS</li>
                         <li>Optimisation de l'ergonomie</li>
                     </ul>
                 </div>
                 <h3>COMPÉTENCES</h3>
                 <ul>
-                    <li>HTML, CSS, JAVAScript, JAVA, SQL, PHP</li>
+                    <li>HTML, CSS, JavaScript, Java, SQL, PHP</li>
                     <li>MLD, MCD</li>
                     <li>Pack Office</li>
                 </ul>
@@ -164,49 +166,49 @@
             Le <strong>BTS SIO</strong> (Services Informatiques aux Organisations) est un diplôme de niveau Bac+2 qui forme des spécialistes des solutions informatiques. Il propose deux options majeures :
         </p>
         <div style="display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
-            <div style="background:#eaf6fb;border-radius:12px;padding:1.2rem 2.2rem;box-shadow:0 2px 12px #3498db22;text-align:center;min-width:220px;max-width:350px;">
-                <span style="font-size:1.15rem;font-weight:600;color:#217dbb;">Option SLAM</span><br>
-                <span style="color:#444;">(Solutions Logicielles et Applications Métiers)<br>Développement d'applications, programmation, gestion de bases de données, conception de sites web.</span>
+            <div style="background:#e0e7ff;border-radius:12px;padding:1.2rem 2.2rem;box-shadow:0 2px 12px rgba(99, 102, 241, 0.2);text-align:center;min-width:220px;max-width:350px;">
+                <span style="font-size:1.15rem;font-weight:600;color:#4f46e5;">Option SLAM</span><br>
+                <span style="color:#111827;font-size:0.98rem;line-height:1.6;font-weight:500;">(Solutions Logicielles et Applications Métiers)<br>Développement d'applications, programmation, gestion de bases de données, conception de sites web.</span>
             </div>
-            <div style="background:#eaf6fb;border-radius:12px;padding:1.2rem 2.2rem;box-shadow:0 2px 12px #3498db22;text-align:center;min-width:220px;max-width:350px;">
-                <span style="font-size:1.15rem;font-weight:600;color:#217dbb;">Option SISR</span><br>
-                <span style="color:#444;">(Solutions d'Infrastructure, Systèmes et Réseaux)<br>Administration réseaux, cybersécurité, gestion des systèmes et infrastructures informatiques.</span>
+            <div style="background:#e0e7ff;border-radius:12px;padding:1.2rem 2.2rem;box-shadow:0 2px 12px rgba(99, 102, 241, 0.2);text-align:center;min-width:220px;max-width:350px;">
+                <span style="font-size:1.15rem;font-weight:600;color:#4f46e5;">Option SISR</span><br>
+                <span style="color:#111827;font-size:0.98rem;line-height:1.6;font-weight:500;">(Solutions d'Infrastructure, Systèmes et Réseaux)<br>Administration réseaux, cybersécurité, gestion des systèmes et infrastructures informatiques.</span>
             </div>
         </div>
 
         <div style="margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto;">
-            <h3 style="color:#217dbb;text-align:center;margin-bottom:1.5rem;">Matières et Coefficients</h3>
+            <h3 style="color:#4f46e5;text-align:center;margin-bottom:1.5rem;">Matières et Coefficients</h3>
             
             <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:2rem;">
-                <div style="background:#f8f9fa;padding:1.5rem;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-                    <h4 style="color:#3498db;margin-bottom:1rem;">Matières Principales</h4>
+                <div style="background:#f5f3ff;padding:1.5rem;border-radius:10px;box-shadow:0 2px 10px rgba(99, 102, 241, 0.1);border-left:4px solid #6366f1;">
+                    <h4 style="color:#6366f1;margin-bottom:1rem;font-size:1.1rem;">Matières Principales</h4>
                     <ul style="list-style:none;padding:0;">
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Culture générale et expression</span> (Coeff. 3)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Culture générale et expression</span> (Coeff. 3)
                         </li>
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Anglais</span> (Coeff. 2)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Anglais</span> (Coeff. 2)
                         </li>
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Mathématiques</span> (Coeff. 2)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Mathématiques</span> (Coeff. 2)
                         </li>
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Algorithmique appliquée</span> (Coeff. 3)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Algorithmique appliquée</span> (Coeff. 3)
                         </li>
                     </ul>
                 </div>
 
-                <div style="background:#f8f9fa;padding:1.5rem;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-                    <h4 style="color:#3498db;margin-bottom:1rem;">Matières Spécifiques SLAM</h4>
+                <div style="background:#f5f3ff;padding:1.5rem;border-radius:10px;box-shadow:0 2px 10px rgba(99, 102, 241, 0.1);border-left:4px solid #6366f1;">
+                    <h4 style="color:#6366f1;margin-bottom:1rem;font-size:1.1rem;">Matières Spécifiques SLAM</h4>
                     <ul style="list-style:none;padding:0;">
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Analyse économique, managériale et juridique</span> (Coeff. 3)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Analyse économique, managériale et juridique</span> (Coeff. 3)
                         </li>
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Conception et maintenance de solutions informatiques</span> (Coeff. 4)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Conception et maintenance de solutions informatiques</span> (Coeff. 4)
                         </li>
-                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;">
-                            <span style="color:#217dbb;font-weight:600;">Cybersécurité des services informatiques</span> (Coeff. 3)
+                        <li style="margin-bottom:0.8rem;padding-left:1.5rem;position:relative;color:#111827;font-weight:500;">
+                            <span style="color:#4f46e5;font-weight:700;">Cybersécurité des services informatiques</span> (Coeff. 3)
                         </li>
                     </ul>
                 </div>
@@ -239,7 +241,7 @@
             </div>
         </div>
         <div style="text-align:center;margin-top:1.5rem;">
-            <a href="projets-bts.html" class="bts-projet-card" style="display:inline-block;padding:0.7rem 1.5rem;font-size:1.1rem;font-weight:600;background:#3498db;color:#fff;border-radius:8px;text-decoration:none;transition:background 0.2s;">Voir tous les projets</a>
+            <a href="projets-bts.html" class="bts-projet-card" style="display:inline-block;padding:0.7rem 1.5rem;font-size:1.1rem;font-weight:600;background:#6366f1;color:#fff;border-radius:8px;text-decoration:none;transition:background 0.2s;">Voir tous les projets</a>
         </div>
     </section>
 
@@ -247,72 +249,156 @@
         <h2>Veille technologique</h2>
         <div class="veille-content">
             <div class="veille-intro">
-                <h3><i>Qu'est-ce qu'une veille technologique ?</i></h3>
-                <p>La veille technologique désigne le processus de surveillance active des évolutions, des innovations et des tendances dans les domaines technologiques.</p>
-                <p>Elle permet de rester informé sur les nouvelles avancées, d'anticiper les opportunités, mais aussi de prévenir les risques ou les menaces liées à ces innovations.</p>
-                <p>La veille est un outil essentiel pour les entreprises et les professionnels, car elle contribue à la prise de décisions stratégiques, à l'innovation et à la compétitivité.</p>
+                <h3><i>🎵 L'IA Générative pour la Musique : Une Révolution Technologique</i></h3>
+                <p>La veille technologique sur l'IA générative pour la musique est essentielle pour comprendre comment les technologies révolutionnent la création musicale, la production et la distribution de contenu audio.</p>
+                <p>Avec l'émergence d'outils comme SUNO, Udio, et d'autres plateformes d'IA, le secteur musical connaît une transformation majeure permettant la génération de musique complète à partir de simples descriptions textuelles.</p>
+                <p>Cette veille permet d'anticiper l'impact économique, éthique et créatif de ces innovations, essentiels pour les musiciens, producteurs, et professionnels du secteur tech.</p>
             </div>
             <div class="veille-themes">
-                <h3><i>Thèmes de veille : Cybersécurité et Aérospatiale</i></h3>
-                <p>Dans le cadre de ma veille technologique, je me concentre sur deux secteurs majeurs :</p>
+                <h3><i>🎼 Thèmes Prioritaires de Veille</i></h3>
+                <p>Ma veille technologique se concentre sur trois piliers majeurs du secteur IA-Musique :</p>
                 <div class="veille-theme-card">
-                    <h4><i>La Cybersécurité</i></h4>
-                    <p>Il est crucial de suivre les dernières tendances en matière de protection des données et des infrastructures. Les cyberattaques, la protection des informations sensibles, et la sécurité des systèmes sont au cœur des préoccupations des entreprises aujourd'hui.</p>
+                    <h4><i>🤖 Génération Musicale par IA</i></h4>
+                    <p>Suivi des avancées en deep learning et neural networks pour la composition, production et arrangement automatique. Outils : SUNO AI, Udio, OpenAI Jukebox, Google MusicLM, Meta AudioCraft, AIVA, Amper Music.</p>
                 </div>
                 <div class="veille-theme-card">
-                    <h4><i>L'Aérospatiale</i></h4>
-                    <p>Ce domaine connaît des innovations spectaculaires, notamment avec le développement des systèmes de navigation et de communication, la sécurité des réseaux satellitaires et les progrès en matière de technologie embarquée.</p>
+                    <h4><i>🎙️ Synthèse Vocale et Audio</i></h4>
+                    <p>Monitoring des technologies de voice synthesis, voice cloning, et text-to-speech musicales. Impact sur la production de podcasts, audiobooks, et musique avec vocals générés par IA.</p>
+                </div>
+                <div class="veille-theme-card">
+                    <h4><i>⚖️ Enjeux Éthiques, Légaux et Créatifs</i></h4>
+                    <p>Surveillance des débats sur les droits d'auteur, les royalties, l'attribution artistique, et l'impact sur les musiciens professionnels. Réglementations émergentes et position des majors labels.</p>
                 </div>
             </div>
 
             <div class="veille-outils">
-                <h3><i>Outils utilisés pour ma veille</i></h3>
-                <p>J'utilise plusieurs outils pour effectuer ma veille de manière efficace :</p>
+                <h3><i>🛠️ Outils et Plateformes de Veille</i></h3>
+                <p>Les ressources que j'utilise pour rester à l'avant-garde de cette révolution musicale :</p>
                 <div class="veille-outil-card">
-                    <h4><i>Google Alerts</i></h4>
-                    <p>Ce service me permet de recevoir directement par mail des articles ou informations liés aux thèmes de cybersécurité et d'aérospatiale. Il est particulièrement utile pour rester à jour sur les dernières menaces et innovations.</p>
-                    <img src="images/google-alerte.png" alt="Google Alerts" style="width:100%;max-width:400px;margin-top:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                    <h4><i>SUNO AI 🎶</i></h4>
+                    <p><strong>Lien :</strong> https://suno.com<br><strong>Description :</strong> Plateforme de génération musicale par IA permettant de créer des chansons complètes avec lyrics, mélodie et production en quelques secondes. Support de multiples genres musicaux.</p>
+                    <p><strong>Capacités :</strong> Génération texte-to-musique, création de lyrics, production d'albums, export haute qualité.</p>
                 </div>
                 <div class="veille-outil-card">
-                    <h4><i>Instagram</i></h4>
-                    <p>Cette application me permet de rester informé sur les actualités, de plus, j'en apprends un peu plus sur les métiers dans l'aérospatiale grâce aux personnes que je follow, tel que Allan Petre.</p>
+                    <h4><i>Udio 🎵</i></h4>
+                    <p><strong>Lien :</strong> https://www.udio.com<br><strong>Description :</strong> Concurrent direct de SUNO, spécialisé dans la génération musicale avec contrôle fin du style, tempo, et instrumentation.</p>
+                    <p><strong>Capacités :</strong> Génération à partir de prompts détaillés, remix par IA, collaboration musicale assistée.</p>
+                </div>
+                <div class="veille-outil-card">
+                    <h4><i>Google Alerts & RSS Feeds</i></h4>
+                    <p>Configuration d'alertes sur : « SUNO AI », « Udio AI », « AI Music Generation », « Music AI Ethics », « AI Copyright Music ».</p>
+                    <p>Sources clés : TechCrunch, The Verge, WIRED, Music Radar, Digital Music News, MusicTech Magazine.</p>
+                </div>
+                <div class="veille-outil-card">
+                    <h4><i>LinkedIn & X (Twitter)</i></h4>
+                    <p>Suivi de experts: @suno_ai_news, @AUDIOmusician, hashtags #AIMusic #MusicTech #GenerativeAI.</p>
+                    <p>Groupes LinkedIn : « AI in Music Industry », « Music Production & Technology ».</p>
+                </div>
+                <div class="veille-outil-card">
+                    <h4><i>YouTube & Podcasts</i></h4>
+                    <p>Chaînes : Busy Works Beats, In Depth Cine, Simon Servida (AI explainer).</p>
+                    <p>Podcasts : « The Music Tectonics Podcast », « Creator Economy Podcast ».</p>
                 </div>
             </div>
 
             <div class="veille-articles">
-                <h3><i>Articles de veille</i></h3>
+                <h3><i>📰 Articles et Actualités de Veille</i></h3>
+                
                 <div class="veille-article-card">
-                    <h4><i>Cybersécurité</i></h4>
-                    <h5><i>À Bernay, une journée pour apprendre à lutter contre la cybercriminalité</i></h5>
-                    <p class="article-date">Date de publication : Octobre 06, 2024</p>
-                    <p>L'intelligence artificielle (IA) joue un rôle de plus en plus important dans la cybersécurité. Elle permet d'automatiser la détection des menaces, d'identifier les vulnérabilités des systèmes, et d'améliorer les réponses aux cyberattaques. Des entreprises comme IBM utilisent l'IA pour renforcer la sécurité à travers des solutions comme IBM Security QRadar.</p>
-                    <a href="https://www.paris-normandie.fr/id566216/article/2024-10-06/bernay-une-journee-pour-apprendre-lutter-contre-la-cybercriminalite" class="article-link" target="_blank">En savoir plus</a>
+                    <h4><i>🔴 ALERTE CRITIQUE</i></h4>
+                    <h5><i>SUNO Lève 125 Millions USD - Expansion Majeure en 2024-2025</i></h5>
+                    <p class="article-date">📅 Janvier 2025 | 🔥 TENDANCE HAUTE</p>
+                    <p><strong>Impact :</strong> SUNO a levé un financement massif de série C, valant l'entreprise à plusieurs milliards de dollars. Cela marque une accélération de la course à la domination du marché IA-musique.</p>
+                    <p><strong>Implications :</strong> Amélioration rapide des modèles, expansion des capacités, intégration dans des applications tierces, discussions légales avec les majors labels.</p>
+                    <a href="https://suno.com" class="article-link" target="_blank">🔗 Suivre SUNO AI</a>
+                    <a href="https://techcrunch.com/tag/suno/" class="article-link" target="_blank">📰 TechCrunch - SUNO</a>
                 </div>
+
                 <div class="veille-article-card">
-                    <h4><i>Aérospatiale</i></h4>
-                    <h5><i>WELOCK et ApartX signent un accord clé sur le commerce numérique entre la Chine et le Kazakhstan à l'occasion de la Global Digital Trade Expo</i></h5>
-                    <p class="article-date">Date de publication : Octobre 04, 2024</p>
-                    <p>HANGZHOU, Chine--(BUSINESS WIRE)--Le 25 septembre, la 3e édition de la Global Digital Trade Expo « Digital Trade Night » s'est tenue à Hangzhou. Cet événement a mis en lumière d'importants projets de commerce numérique entre la Chine et le Kazakhstan, insufflant un élan constant à la coopération économique et commerciale entre les deux parties. Au cours de l'événement, la cérémonie de signature très attendue du « Projet clé de commerce numérique Chine-Kazakhstan » a été officiellement ouverte.</p>
-                    <img src="images/welock.png" alt="WELOCK" style="width:100%;max-width:400px;margin-top:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-                    <a href="https://www.businesswire.com/news/home/20241003877038/fr" class="article-link" target="_blank">En savoir plus</a>
+                    <h4><i>⚠️ ALERTE JURIDIQUE</i></h4>
+                    <h5><i>Procès Majeurs : Musiciens vs Entreprises IA (2024-2025)</i></h5>
+                    <p class="article-date">📅 Février 2025 | 🏛️ JURIDIQUE</p>
+                    <p><strong>Situation :</strong> Les majors labels (Universal, Sony, Warner) et associations de musiciens ont engagé des actions en justice contre SUNO et Udio pour entraînement sur musique protégeant le droit d'auteur.</p>
+                    <p><strong>Enjeux :</strong> Clarification des droits d'utilisation, compensation des artistes, modèles de données légaux pour l'IA musicale.</p>
+                    <p><strong>Position des majors :</strong> Négociations de licences commerciales avec les entreprises IA.</p>
+                    <a href="https://www.theverge.com/2024/2/1/24058168/music-labels-sue-suno-udio" class="article-link" target="_blank">⚖️ The Verge - Procès</a>
+                    <a href="https://www.riaa.com" class="article-link" target="_blank">🎵 RIAA (Industry)</a>
                 </div>
+
                 <div class="veille-article-card">
-                    <h4><i>Aérospatiale</i></h4>
-                    <h5><i>La ministre Ng fait la promotion de l'expertise aérospatiale du Canada pendant son séjour à Bruxelles, en Belgique</i></h5>
-                    <p class="article-date">Date de publication : Octobre 04, 2024</p>
-                    <p>Le marché de l'UE, composé de 27 États membres, est le deuxième partenaire commercial mondial du Canada pour les biens et services, et le deuxième partenaire mondial du Canada en ce qui concerne l'investissement direct bilatéral, après les États-Unis.</p>
-                    <p>Le 21 septembre 2024 marquait le septième anniversaire de l'entrée en vigueur provisoire de l'AECG.</p>
-                    <p>En 2023, la valeur du commerce bilatéral de marchandises entre le Canada et l'UE s'est élevée à 126,5 milliards de dollars, soit une augmentation de plus de 65 % depuis 2016, avant l'entrée en vigueur de l'AECG.</p>
-                    <a href="https://www.canada.ca/fr/affaires-mondiales/nouvelles/2024/10/la-ministre-ng-fait-la-promotion-de-lexpertise-aerospatiale-du-canada-pendant-son-sejour-a-bruxelles-en-belgique.html" class="article-link" target="_blank">En savoir plus</a>
+                    <h4><i>💡 TENDANCE ÉMERGENTE</i></h4>
+                    <h5><i>Synthèse Vocale Extrêmement Réaliste - Le Clonage Vocal Parfait</i></h5>
+                    <p class="article-date">📅 Mars 2025 | 🚀 INNOVATION</p>
+                    <p><strong>Développement :</strong> Emergence d'outils capables de cloner la voix d'un artiste avec une précision quasi-parfaite. Impact direct : reproduction de voix de célébrités décédées, production musicale sans chanteurs.</p>
+                    <p><strong>Exemples :</strong> ElevenLabs (voice synthesis), Respeecher (Ukrainian startup), Google NotebookLM Voice Mode.</p>
+                    <p><strong>Préoccupations :</strong> Deepfakes musicaux, usurpation d'identité artistique, questions éthiques majeures.</p>
+                    <a href="https://elevenlabs.io" class="article-link" target="_blank">🎙️ ElevenLabs</a>
+                    <a href="https://www.respeecher.com" class="article-link" target="_blank">🔊 Respeecher</a>
                 </div>
+
                 <div class="veille-article-card">
-                    <h4><i>Focus : Allan Petre</i></h4>
-                    <p>Allan Petre est un expert reconnu dans le domaine de la cybersécurité, avec une spécialisation dans la protection des infrastructures critiques et la sécurité des systèmes informatiques. Il a notamment dirigé plusieurs projets visant à sécuriser les réseaux de communication dans des secteurs sensibles comme la finance et l'aérospatiale. Ses recherches sur l'utilisation de l'intelligence artificielle pour améliorer la détection des cybermenaces font de lui une référence dans ce domaine.</p>
-                    <img src="images/allan-petre.png" alt="Allan Petre" style="width:100%;max-width:400px;margin-top:1.5rem;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-                    <a href="https://www.rfi.fr/fr/vidéo/20240711-allan-petre-ingénieur-à-la-nasa-mon-prochain-objectif-serait-de-devenir-astronaute" class="article-link" target="_blank">En savoir plus</a>
+                    <h4><i>📊 DONNÉES MARCHÉ</i></h4>
+                    <h5><i>Marché IA-Musique : Projection 10+ Milliards USD en 2030</i></h5>
+                    <p class="article-date">📅 Rapport 2024-2025 | 📈 BUSINESS</p>
+                    <p><strong>Statistiques :</strong></p>
+                    <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <li>Marché IA-Musique 2023: ~2.5 Milliards USD</li>
+                        <li>CAGR (2024-2030): ~20-25%</li>
+                        <li>Utilisation professionnelle: +40% chez producteurs (2024)</li>
+                        <li>Adoption créateurs amateurs: +300% sur 12 mois</li>
+                        <li>Fonds VC investis: $500M+ annuels</li>
+                    </ul>
+                    <p><strong>Secteurs clés :</strong> Gaming, Film, Publicités, Production musicale indépendante, Streaming.</p>
+                    <a href="https://www.grandviewresearch.com/industry-analysis/ai-music-generation-market" class="article-link" target="_blank">📊 Grand View Research</a>
+                    <a href="https://www.bloomberg.com" class="article-link" target="_blank">💼 Bloomberg - Market</a>
+                </div>
+
+                <div class="veille-article-card">
+                    <h4><i>🎓 ETUDE DE CAS</i></h4>
+                    <h5><i>Breakbeats sur Spotify - Premier Album 100% IA Généré Charté</i></h5>
+                    <p class="article-date">📅 Août 2024 | 🎵 CULTURE</p>
+                    <p><strong>Événement :</strong> Un album généré intégralement par IA a atteint les charts Spotify, posant la question : l'IA peut-elle être artiste ?</p>
+                    <p><strong>Réaction industrie :</strong> Polarisée - certains saluent l'innovation, d'autres crient à la menace pour les musiciens professionnels.</p>
+                    <p><strong>Impact :</strong> Mise à jour des politiques Spotify et d'autres plateformes concernant le contenu généré par IA.</p>
+                    <a href="https://open.spotify.com" class="article-link" target="_blank">🎵 Spotify - Charts</a>
+                    <a href="https://www.musicradar.com" class="article-link" target="_blank">📻 Music Radar</a>
+                </div>
+
+                <div class="veille-article-card">
+                    <h4><i>🔬 RECHERCHE & INNOVATION</i></h4>
+                    <h5><i>OpenAI Jukebox 2.0 & Meta AudioCraft - Nouvelle Génération</i></h5>
+                    <p class="article-date">📅 Décembre 2024 | 🧪 R&D</p>
+                    <p><strong>Avancées :</strong> OpenAI et Meta ont publié des modèles open-source plus accessibles pour la génération musicale. Permet à des chercheurs indépendants de créer leurs propres outils.</p>
+                    <p><strong>Implication :</strong> Démocratisation de la création musicale IA, écosystème de startups émergent, compétition accrue.</p>
+                    <p><strong>Open Source :</strong> Meta AudioCraft permet génération en temps réel sur hardware limité.</p>
+                    <a href="https://github.com/facebookresearch/audiocraft" class="article-link" target="_blank">🎼 Meta AudioCraft (GitHub)</a>
+                    <a href="https://openai.com/research" class="article-link" target="_blank">🔍 OpenAI Research</a>
+                </div>
+
+                <div class="veille-article-card">
+                    <h4><i>💼 PARTENARIATS STRATEGIQUES</i></h4>
+                    <h5><i>Universal Music Signe Accord de Licence avec Entreprise IA - Modèle Économique Naît</i></h5>
+                    <p class="article-date">📅 Novembre 2024 | 🤝 BUSINESS</p>
+                    <p><strong>Développement :</strong> Universal Music Group négocie des licences avec plateformes IA pour utilisation légale du catalogue musical en entraînement.</p>
+                    <p><strong>Termes :</strong> Redevances par génération musicale, crédit artistique obligatoire, limitations d'usage.</p>
+                    <p><strong>Signification :</strong> Modèle économique viable émerge, reconnaissance des droits artistiques, path to profitability pour startups IA.</p>
+                    <a href="https://www.universalmusic.com" class="article-link" target="_blank">🎶 Universal Music Group</a>
+                    <a href="https://www.digitalmusicnews.com" class="article-link" target="_blank">📰 Digital Music News</a>
+                </div>
+
+                <div class="veille-article-card">
+                    <h4><i>🌍 ADOPTION GLOBALE</i></h4>
+                    <h5><i>Asie de l'Est Domine Production IA-Musique - Startups Chinoises Émergent</i></h5>
+                    <p class="article-date">📅 Janvier 2025 | 🌏 GLOBAL</p>
+                    <p><strong>Tendance :</strong> Startups chinoises et sud-coréennes lancent des outils IA-musique massivement financés, créant concurrence directe à SUNO/Udio.</p>
+                    <p><strong>Avantages :</strong> Absence de restrictions légales similaires, large marché local, talents ML concentrés.</p>
+                    <p><strong>Exemples :</strong> ByteDance (Ugifai concept), Netease Music R&D.</p>
+                    <a href="https://www.bytedance.com" class="article-link" target="_blank">🔴 ByteDance</a>
+                    <a href="https://music.163.com" class="article-link" target="_blank">🎵 Netease Music</a>
                 </div>
             </div>
         </div>
+    </section>
     </section>
 
     <section id="contact" class="contact">
@@ -326,166 +412,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Pierre Ayessa. Tous droits réservés.</p>
+        <p>&copy; 2026 Pierre Ayessa. Tous droits réservés.</p>
     </footer>
 
-    <script src="script.js" defer></script>
-    <script>
-        // Theme geek clair: fond digital leger (performance friendly)
-        const matrixCanvas = document.createElement('canvas');
-        matrixCanvas.id = 'matrix-bg';
-        Object.assign(matrixCanvas.style, {
-            position: 'fixed',
-            inset: '0',
-            width: '100%',
-            height: '100%',
-            zIndex: '0',
-            opacity: '0.22',
-            pointerEvents: 'none'
-        });
-        document.body.prepend(matrixCanvas);
-
-        // Assure que le contenu reste au-dessus du canvas
-        [...document.body.children].forEach((el) => {
-            if (el.id !== 'matrix-bg' && el.tagName !== 'SCRIPT') {
-                el.style.position = el.style.position || 'relative';
-                el.style.zIndex = '1';
-            }
-        });
-
-        const matrixCtx = matrixCanvas.getContext('2d');
-        let matrixWidth = 0;
-        let matrixHeight = 0;
-        let columns = 0;
-        let drops = [];
-        const fontSize = 14;
-        const matrixChars = '01{}[]<>/\\+-';
-
-        function resizeMatrix() {
-            matrixWidth = window.innerWidth;
-            matrixHeight = window.innerHeight;
-            matrixCanvas.width = matrixWidth;
-            matrixCanvas.height = matrixHeight;
-            columns = Math.floor(matrixWidth / fontSize);
-            drops = Array.from({ length: columns }, () => Math.floor(Math.random() * -50));
-        }
-
-        function drawMatrix() {
-            matrixCtx.fillStyle = 'rgba(245, 250, 255, 0.18)';
-            matrixCtx.fillRect(0, 0, matrixWidth, matrixHeight);
-
-            matrixCtx.fillStyle = 'rgba(23, 91, 200, 0.42)';
-            matrixCtx.font = `${fontSize}px Consolas, monospace`;
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-                const x = i * fontSize;
-                const y = drops[i] * fontSize;
-                matrixCtx.fillText(text, x, y);
-
-                if (y > matrixHeight && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        resizeMatrix();
-        window.addEventListener('resize', resizeMatrix);
-        setInterval(drawMatrix, 90);
-
-        // Animation au scroll
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observer pour les cartes
-        document.querySelectorAll('.veille-theme-card, .veille-outil-card, .veille-article-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.5s ease';
-            observer.observe(card);
-        });
-
-        // Effet de parallaxe sur les images
-        document.querySelectorAll('.veille-outil-card img').forEach(img => {
-            img.addEventListener('mousemove', (e) => {
-                const rect = img.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const moveX = (x - centerX) / 20;
-                const moveY = (y - centerY) / 20;
-                
-                img.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
-            });
-
-            img.addEventListener('mouseleave', () => {
-                img.style.transform = 'scale(1)';
-            });
-        });
-
-        // Animation des titres
-        document.querySelectorAll('.veille-intro h3, .veille-themes h3, .veille-outils h3, .veille-articles h3').forEach(title => {
-            title.style.opacity = '0';
-            title.style.transform = 'translateX(-20px)';
-            title.style.transition = 'all 0.5s ease';
-            observer.observe(title);
-        });
-
-        // Theme geek clair: effet terminal sur le titre principal
-        const mainTitle = document.querySelector('.hero h1');
-        if (mainTitle) {
-            const finalText = mainTitle.textContent.trim();
-            const chars = "01{}[]<>/\\";
-            let frame = 0;
-            const maxFrames = finalText.length * 3;
-            const glitch = setInterval(() => {
-                const visibleCount = Math.floor(frame / 3);
-                let output = "";
-                for (let i = 0; i < finalText.length; i++) {
-                    if (i < visibleCount) {
-                        output += finalText[i];
-                    } else if (finalText[i] === " ") {
-                        output += " ";
-                    } else {
-                        output += chars[Math.floor(Math.random() * chars.length)];
-                    }
-                }
-                mainTitle.textContent = output;
-                frame++;
-                if (frame > maxFrames) {
-                    clearInterval(glitch);
-                    mainTitle.textContent = finalText;
-                }
-            }, 45);
-
-            mainTitle.style.textShadow = "0 0 10px rgba(47, 137, 255, 0.28)";
-        }
-
-        // Theme geek clair: curseur clignotant sur le sous-titre
-        const subtitle = document.querySelector('.hero .title');
-        if (subtitle) {
-            subtitle.dataset.base = subtitle.textContent;
-            setInterval(() => {
-                const hasCursor = subtitle.textContent.endsWith(" _");
-                subtitle.textContent = hasCursor ? subtitle.dataset.base : `${subtitle.dataset.base} _`;
-            }, 650);
-        }
-    </script>
+    <script src="script.js?v=20260509" defer></script>
 </body>
 </html> 

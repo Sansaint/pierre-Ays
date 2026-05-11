@@ -6,130 +6,238 @@
     --desktop: 1200px;
 }
 
-/* Styles de base pour mobile */
+/* ========== MOBILE (max-width: 480px) ========== */
 @media (max-width: 480px) {
     /* Navigation */
+    nav {
+        padding: 1rem 3%;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
         top: 60px;
         left: 0;
         width: 100%;
-        background: #fff;
+        background: linear-gradient(135deg, var(--primary-color), var(--gradient-start));
         padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 999;
     }
 
     .nav-links.active {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    }
+
+    .nav-links a {
+        color: var(--accent-color);
+        font-size: 0.95rem;
     }
 
     .menu-toggle {
         display: block;
         font-size: 1.5rem;
         cursor: pointer;
+        color: var(--accent-color);
     }
 
     /* Hero Section */
     .hero {
-        padding: 4rem 1rem 2rem;
+        padding: 5rem 1.5rem 2rem;
+        text-align: center;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero .title {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding: 1rem;
+    }
+
+    .social-links {
+        gap: 1.5rem;
+    }
+
+    /* Sections générales */
+    section {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: 2rem !important;
+    }
+
+    /* CV Section */
+    .cv-section {
+        padding: 2.5rem 1rem !important;
+    }
+
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .cv-col h3 {
+        font-size: 1.1rem;
+        margin-top: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .cv-block {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 8px;
+    }
+
+    /* Projets */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .project-card {
+        border-radius: 10px;
+    }
+
+    .project-card img {
+        height: 180px;
+    }
+
+    .project-card h3 {
+        font-size: 1.1rem;
+        padding: 1rem 1rem 0.5rem;
+    }
+
+    .project-links {
+        padding: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    /* Compétences */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    .skill-category h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-category li {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 2.5rem 1rem !important;
+    }
+
+    #contact-form {
+        max-width: 100%;
+    }
+
+    #contact-form input,
+    #contact-form textarea {
+        font-size: 16px;
+        padding: 0.8rem;
+    }
+
+    .apropos-stats {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .apropos-card {
+        flex: 1;
+        min-width: 150px;
+        padding: 1.5rem;
+    }
+}
+
+/* ========== TABLETTE (481px - 768px) ========== */
+@media (min-width: 481px) and (max-width: 768px) {
+    .nav-links {
+        gap: 1.2rem;
+        font-size: 0.95rem;
+    }
+
+    .profile-image {
+        width: 220px;
+        height: 220px;
     }
 
     .hero h1 {
         font-size: 2rem;
     }
 
-    /* Projets */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    .project-card {
-        margin-bottom: 1.5rem;
-    }
-
-    /* Compétences */
-    .skills-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    /* Blog */
-    .blog-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    .blog-filters {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-
-    /* CV */
-    .cv-container {
-        padding: 1rem;
-    }
-
-    .cv-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cv-actions {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    /* Formulaire de contact */
-    #contact-form {
-        padding: 1rem;
-    }
-
-    .form-group {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
-
-/* Styles pour tablette */
-@media (min-width: 481px) and (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .profile-image {
-        width: 250px;
-        height: 250px;
-    }
-
+    /* Grilles en 2 colonnes sur tablette */
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
     }
 
     .cv-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .cv-block {
+        padding: 1.5rem;
+        background-color: rgba(255,255,255,0.5);
+        border-radius: 8px;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
     }
 }
 
-/* Styles pour laptop */
+/* ========== LAPTOP (769px - 1024px) ========== */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    /* 2 colonnes sur laptop moyen */
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -138,58 +246,47 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .blog-grid {
+    .cv-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Styles pour desktop */
+/* ========== DESKTOP (1025px+) ========== */
 @media (min-width: 1025px) {
     .container {
         max-width: 1200px;
     }
 
+    /* 3 colonnes en desktop */
     .projects-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .blog-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .cv-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Styles communs pour tous les appareils */
+/* ========== STYLES COMMUNS RESPONSIVE ========== */
 @media (max-width: 768px) {
-    /* Amélioration de la lisibilité */
     body {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     h3 {
-        font-size: 1.2rem;
-    }
-
-    /* Espacement adaptatif */
-    .section {
-        padding: 2rem 1rem;
-    }
-
-    /* Boutons et interactions */
-    .btn {
-        width: 100%;
-        padding: 0.8rem;
+        font-size: 1.1rem;
     }
 
     /* Images responsives */
@@ -198,6 +295,81 @@
         height: auto;
     }
 
+    /* Boutons responsifs */
+    button,
+    .btn {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    /* Espacement adaptif */
+    section {
+        padding: 2rem 1rem !important;
+    }
+}
+
+/* ========== PETITS MOBILES (max-width: 360px) ========== */
+@media (max-width: 360px) {
+    nav {
+        padding: 0.8rem 2%;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 4rem 1rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    section {
+        padding: 2rem 0.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .projects-grid,
+    .skills-grid {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .skill-category,
+    .project-card {
+        padding: 1rem;
+    }
+}
+
+/* ========== ORIENTATION LANDSCAPE ========== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 3rem 2rem;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
     /* Grilles flexibles */
     .grid {
         display: grid;
@@ -258,21 +430,4 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
-}
-
-/* Theme override: noir et blanc style geek/hacker */
-body {
-    background: #050505;
-    color: #e6e6e6;
-    font-family: "Consolas", "Courier New", monospace;
-}
-
-.nav-links {
-    background: #111111;
-    border-top: 1px solid #2e2e2e;
-}
-
-.nav-links a,
-.menu-toggle {
-    color: #f5f5f5;
 }
