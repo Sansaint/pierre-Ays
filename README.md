@@ -11,7 +11,7 @@ Un portfolio moderne et responsive pour étudiants en informatique.
 - Section compétences
 - Formulaire de contact
 - Animations fluides
-- Intégration des réseaux sociaux
+
 
 ## Installation
 
